@@ -141,6 +141,7 @@ button { cursor: pointer; }
 .topline-end { font-size: 12px; }
 .vertical-note { display: none; }
 .composition-marker { position: relative; z-index: 1; top: auto; left: auto; display: inline-flex; width: max-content; align-self: flex-start; align-items: center; margin: 0 0 24px; padding: 11px 18px; color: var(--deep); background: var(--acid); font: 600 16px/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.expedition-content { display: contents; }
 
 /* Field route: energetic, high-visibility color blocks with the photo always full bleed. */
 .template-essay .title-wrap::before { background: var(--orange); box-shadow: 16px 0 0 var(--acid); }
@@ -201,13 +202,15 @@ button { cursor: pointer; }
 .template-summit .meta-left { color: #28412c; }
 .template-summit .meta-right { color: var(--deep); }
 .template-expedition .photo-treatment { background: linear-gradient(180deg, rgba(7,24,15,.08) 0%, rgba(7,24,15,.02) 35%, rgba(7,24,15,.52) 100%); }
-.template-expedition .layout-block { top: 76px; right: 76px; bottom: 76px; left: 76px; justify-content: flex-start; align-items: stretch; }
-.template-expedition .composition-marker { align-self: flex-start; margin: 0 0 550px; padding: 11px 20px; color: var(--deep); background: var(--yellow); }
-.template-expedition .title-wrap { width: 86%; max-width: 860px; padding: 34px 42px 38px; background: var(--orange); box-shadow: 14px 14px 0 var(--acid); }
+.template-expedition .layout-block { top: 76px; right: 76px; bottom: 76px; left: 76px; display: block; --expedition-marker-gap: 24px; }
+.template-expedition .composition-marker { position: absolute; top: 0; left: 0; align-self: flex-start; margin: 0; padding: 11px 20px; color: var(--deep); background: var(--yellow); }
+.template-expedition .expedition-content { position: absolute; top: auto; right: 0; bottom: 0; left: 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: stretch; gap: 24px; min-height: 0; height: auto; transform: scale(var(--expedition-fit, 1)); transform-origin: bottom center; }
+.template-expedition .title-wrap { width: fit-content; max-width: 86%; min-width: 0; flex: 0 0 auto; padding: 34px 42px 38px; background: var(--orange); box-shadow: 14px 14px 0 var(--acid); overflow-wrap: anywhere; }
 .template-expedition .title-wrap::before { width: 58px; height: 7px; margin-bottom: 20px; background: var(--pink); box-shadow: 13px 0 0 var(--deep); }
-.template-expedition .hero-title { color: var(--deep); font-size: 96px; line-height: .96; }
-.template-expedition .subtitle { max-width: 68%; margin: 28px 0 34px auto; padding: 23px 28px; border-left: 9px solid var(--pink); color: var(--white); background: rgba(18,59,43,.94); font-size: 35px; }
-.template-expedition .meta-row { margin-top: 0; padding: 19px 24px; border: 0; color: var(--deep); background: var(--acid); font-size: 22px; }
+.template-expedition .hero-title { color: var(--deep); font-size: 96px; line-height: .96; overflow-wrap: anywhere; }
+.template-expedition .subtitle { width: min(68%, 680px); max-width: none; min-width: 0; flex: 0 0 auto; margin: 0 0 0 auto; padding: 23px 28px; border-left: 9px solid var(--pink); color: var(--white); background: rgba(18,59,43,.94); font-size: 35px; overflow-wrap: anywhere; }
+.template-expedition .meta-row { width: 100%; min-width: 0; flex: 0 0 auto; flex-wrap: wrap; margin-top: 0; padding: 19px 24px; border: 0; color: var(--deep); background: var(--acid); font-size: 22px; }
+.template-expedition .meta-row > * { min-width: 0; overflow-wrap: anywhere; }
 .template-expedition .meta-left { color: var(--deep); }
 .template-expedition .meta-right { color: var(--deep); }
 
@@ -255,7 +258,7 @@ button { cursor: pointer; }
 }
 @media (max-width: 740px) {
   .template-expedition .layout-block { top: 54px; right: 54px; bottom: 54px; left: 54px; }
-  .template-expedition .title-wrap { width: 94%; padding: 26px 28px 30px; }
-  .template-expedition .subtitle { max-width: 82%; padding: 18px 20px; }
+  .template-expedition .title-wrap { max-width: 94%; padding: 26px 28px 30px; }
+  .template-expedition .subtitle { width: 82%; padding: 18px 20px; }
   .template-expedition .meta-row { padding: 15px 16px; }
 }
