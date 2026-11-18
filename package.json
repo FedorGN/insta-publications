@@ -1,0 +1,1 @@
+{"name":"fieldnotes-editorial-studio","version":"1.0.0","private":true,"type":"module","scripts":{"dev":"vite --host 0.0.0.0","export":"node scripts/export.mjs"},"devDependencies":{"vite":"^6.2.0","playwright":"^1.58.0"}}

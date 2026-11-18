@@ -1,0 +1,43 @@
+{
+  "version": "3.0",
+  "reference": "Field Mag style: bold classic book/editorial serif; reference is not verified as exact font",
+  "headline": {
+    "defaultFamily": "Libre Baskerville",
+    "weight": 700,
+    "fontStyle": "normal",
+    "letterSpacingEm": -0.035,
+    "lineHeight": 1.12,
+    "fallbacks": [
+      "Georgia",
+      "serif"
+    ],
+    "alternatives": [
+      "Georgia",
+      "Newsreader"
+    ]
+  },
+  "metadata": {
+    "family": "IBM Plex Mono",
+    "weight": 400,
+    "letterSpacingEm": 0.035,
+    "transform": "uppercase"
+  },
+  "editor": {
+    "family": "DM Sans",
+    "weights": [
+      400,
+      500,
+      600,
+      700
+    ]
+  },
+  "sources": {
+    "googleFonts": "https://fonts.google.com/specimen/Libre+Baskerville",
+    "alternative": "https://fonts.google.com/specimen/Newsreader"
+  },
+  "canvas": {
+    "width": 1080,
+    "height": 1350,
+    "unit": "px"
+  }
+}
