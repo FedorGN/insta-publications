@@ -38,6 +38,12 @@ function updatePreview(){
  $('#compositionMarkerPreview').textContent=compositionMarker;
  $('#compositionMarkerPreview').hidden=!compositionMarkers[current]||!compositionMarker;
  $('#compositionMarkerField').hidden=!compositionMarkers[current];
+ $('#compositionMarkerSizeField').hidden=false;
+ const compositionMarkerSize=Number($('#compositionMarkerSizeInput').value);
+ if(Number.isFinite(compositionMarkerSize)&&compositionMarkerSize>=8&&compositionMarkerSize<=32){
+   $('#compositionMarkerPreview').style.fontSize=compositionMarkerSize+'px';
+   $('#summitMarkerPreview').style.fontSize=compositionMarkerSize+'px';
+ }
  const summitLabel=$('#summitLabelInput').value.trim();
  $('#summitMarkerPreview').textContent=summitLabel;
  $('#summitMarkerPreview').hidden=current!=='summit'||!summitLabel;
@@ -71,6 +77,7 @@ function setTemplate(name){current=name;artboard.className='artboard template-'+
 document.querySelectorAll('[data-template]').forEach(b=>b.addEventListener('click',()=>setTemplate(b.dataset.template)));
 fields.forEach(f=>$('#'+f+'Input').addEventListener('input',updatePreview));
 $('#compositionMarkerInput').addEventListener('input',updatePreview);
+$('#compositionMarkerSizeInput').addEventListener('input',updatePreview);
 $('#summitLabelInput').addEventListener('input',updatePreview);
 $('#subtitleSizeInput').addEventListener('input',updatePreview);
 $('#titleSizeInput').addEventListener('input',updatePreview);
