@@ -19,7 +19,7 @@ const fields=['title','subtitle','meta','number'];
 let current='essay'; let bgOverrides={};
 const subtitleSizes={essay:35,trail:35,book:35,quote:35,split:35,statement:35};
 const titleSizes={essay:87,trail:72,book:74,quote:82,split:72,statement:78};
-const metaSizes={essay:19,trail:17,book:17,quote:17,split:16,statement:17};
+const metaSizes={essay:22,trail:22,book:22,quote:22,split:22,statement:22};
 const headlineFonts={
   barlow:"'Barlow Condensed',Impact,sans-serif",
   oswald:"'Oswald','Arial Narrow',sans-serif"

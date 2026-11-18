@@ -22,24 +22,15 @@
         <button class="template-button" data-template="split"><span class="template-index">05</span><span>Field Spread</span><span class="template-chevron">↗</span></button>
         <button class="template-button" data-template="statement"><span class="template-index">06</span><span>Framed Statement</span><span class="template-chevron">↗</span></button>
       </div>
-      <div class="section-label spacing-top">02 / TYPOGRAPHY</div>
-      <div class="field typeface-control"><label for="fontInput">Adventure headline font</label><select id="fontInput"><option value="barlow" selected>Barlow Condensed · ExtraBold (recommended)</option><option value="oswald">Oswald · Bold</option></select></div>
-      <p class="typeface-hint">Bold, condensed trail lettering. Your photos and words stay editable.</p>
-      <div class="section-label spacing-top">03 / CONTENT</div>
+      <div class="section-label spacing-top">02 / CONTENT</div>
       <div class="field"><label for="titleInput">Title / quote</label><textarea id="titleInput" rows="3"></textarea></div>
-      <div class="field"><label for="titleSizeInput">Title / quote size (px)</label><input id="titleSizeInput" type="number" min="24" max="180" step="1" value="87" /></div>
       <div class="field"><label for="subtitleInput">Supporting text</label><textarea id="subtitleInput" rows="3"></textarea></div>
-      <div class="field"><label for="subtitleSizeInput">Supporting text size (px)</label><input id="subtitleSizeInput" type="number" min="12" max="64" step="1" value="35" /></div>
       <div class="field"><label for="metaInput">Location / author</label><textarea id="metaInput" rows="2"></textarea></div>
-      <div class="field"><label for="metaSizeInput">Location / author + edition / date size (px)</label><input id="metaSizeInput" type="number" min="10" max="48" step="1" value="19" /></div>
-      <div class="field checkbox-field"><label for="metaLineToggle"><input type="checkbox" id="metaLineToggle" checked /> Display metadata line</label></div>
-      <div class="field checkbox-field"><label for="textShadowToggle"><input type="checkbox" id="textShadowToggle" /> Add shadow behind text</label></div>
       <div class="field"><label for="numberInput">Edition / date</label><textarea id="numberInput" rows="2"></textarea></div>
-      <div class="section-label spacing-top">04 / PHOTOGRAPHY</div>
+      <div class="section-label spacing-top">03 / PHOTOGRAPHY</div>
       <label class="upload-control" for="photoInput"><span>＋ &nbsp; Upload background photo</span><small>JPG, PNG, WEBP</small></label><input type="file" accept="image/*" id="photoInput" hidden>
       <div class="field"><label for="photoUrlInput">Or use photo URL</label><input id="photoUrlInput" placeholder="https://..." /></div>
-      <div class="field checkbox-field"><label for="backgroundGradientToggle"><input type="checkbox" id="backgroundGradientToggle" checked /> Display background gradient</label></div>
-      <div class="side-footer"><span>PHOTO FIRST. STORY ALWAYS.</span><span>1080 × 1350 / 4:5</span></div>
+      <div class="side-footer"><span>MADE BY FEDOR GNETKOV</span></div>
     </aside>
     <main class="workspace">
       <header class="workspace-header"><div><span class="kicker">THE OUTDOOR STORY CANVAS</span><h1>Stories worth keeping<span>.</span></h1><p>Big days outside. Good stories to bring back.</p></div><div class="workspace-actions"><button id="resetBtn" class="button secondary">Reset sample</button><button id="exportBtn" class="button primary">Export PNG ↗</button></div></header>
@@ -49,6 +40,19 @@
         <div class="layout-block"><div class="title-wrap"><h2 class="hero-title" id="titlePreview">Somewhere,<br>far from noise.</h2></div><div class="subtitle" id="subtitlePreview">On learning to be still in places that make you feel small.</div><div class="meta-row" id="metaRow"><span class="meta-left" id="metaPreview">FRENCH ALPS · 45°55′N</span><span class="meta-right" id="editionPreview">VOL. 01 — 2026</span></div></div>
       </article></div></div>
     </main>
+    <aside class="settings-panel" aria-label="Typography and display settings">
+      <div class="settings-heading"><span class="kicker">TUNE YOUR LAYOUT</span><h2>Style &amp; display</h2></div>
+      <div class="section-label">04 / TYPOGRAPHY</div>
+      <div class="field typeface-control"><label for="fontInput">Adventure headline font</label><select id="fontInput"><option value="barlow" selected>Barlow Condensed · ExtraBold (recommended)</option><option value="oswald">Oswald · Bold</option></select></div>
+      <div class="field"><label for="titleSizeInput">Title / quote size (px)</label><input id="titleSizeInput" type="number" min="24" max="180" step="1" value="87" /></div>
+      <div class="field"><label for="subtitleSizeInput">Supporting text size (px)</label><input id="subtitleSizeInput" type="number" min="12" max="64" step="1" value="35" /></div>
+      <div class="field"><label for="metaSizeInput">Location / author + edition / date size (px)</label><input id="metaSizeInput" type="number" min="10" max="48" step="1" value="22" /></div>
+      <div class="section-label spacing-top">05 / DISPLAY</div>
+      <div class="field checkbox-field"><label for="metaLineToggle"><input type="checkbox" id="metaLineToggle" checked /> Display metadata line</label></div>
+      <div class="field checkbox-field"><label for="textShadowToggle"><input type="checkbox" id="textShadowToggle" /> Add shadow behind text</label></div>
+      <div class="field checkbox-field"><label for="backgroundGradientToggle"><input type="checkbox" id="backgroundGradientToggle" checked /> Display background gradient</label></div>
+      <p class="typeface-hint">Bold, condensed trail lettering. Your photos and words stay editable.</p>
+    </aside>
   </div>
   <script src="app.js"></script>
 </body>
