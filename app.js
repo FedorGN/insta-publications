@@ -5,7 +5,8 @@ const photos = {
   quote:'https://images.unsplash.com/photo-1448375240586-882707db888b?w=1400&q=90',
   split:'https://images.unsplash.com/photo-1500534623283-312aade485b7?w=1400&q=90',
   statement:'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1400&q=90',
-  summit:'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&q=90'
+  summit:'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&q=90',
+  expedition:'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1400&q=90'
 };
 const samples={
   essay:{title:'Somewhere,\nfar from noise.',subtitle:'On learning to be still in places that make you feel small.',meta:'FRENCH ALPS · 45°55′N',number:'VOL. 01 — 2026'},
@@ -14,15 +15,16 @@ const samples={
   quote:{title:'There is beauty\nin taking\nthe slower road.',subtitle:'A small note to remember what matters.',meta:'NOTES TO SELF',number:'ISSUE 012'},
   split:{title:'Into the\nopen air.',subtitle:'Notes from a place measured in horizons, weather, and time.',meta:'NORTHERN RIDGE · 58°35′N',number:'FIELD JOURNAL — 2026'},
   statement:{title:'Stay curious.',subtitle:'The places that change us rarely announce themselves at first.',meta:'NOTES FROM THE ROAD',number:'VOL. 02 — 2026'},
-  summit:{title:'Earn the view.',subtitle:'One last climb. One wide-open horizon. All worth the effort.',meta:'HIGH CAMP · 3,840 M',number:'SUMMIT LOG / 007',summitLabel:'07  /  SUMMIT LOG'}
+  summit:{title:'Earn the view.',subtitle:'One last climb. One wide-open horizon. All worth the effort.',meta:'HIGH CAMP · 3,840 M',number:'SUMMIT LOG / 007',summitLabel:'07  /  SUMMIT LOG'},
+  expedition:{title:'Beyond the\nlast switchback.',subtitle:'A field record of rough weather, steady legs, and the long route home.',meta:'NORTH FORK · 46°51′N',number:'EXPEDITION 008 · 2026'}
 };
 const $=s=>document.querySelector(s);
 const fields=['title','subtitle','meta','number'];
 let current='essay'; let bgOverrides={};
-const subtitleSizes={essay:35,trail:35,book:35,quote:35,split:35,statement:35,summit:35};
-const titleSizes={essay:87,trail:72,book:74,quote:82,split:72,statement:78,summit:88};
-const metaSizes={essay:22,trail:22,book:22,quote:22,split:22,statement:22,summit:22};
-const compositionMarkers={essay:'01  /  PHOTO ESSAY',trail:'02  /  TRAIL LOG',book:'03  /  BOOK NOTES',quote:'04  /  QUIET QUOTE',split:'05  /  FIELD SPREAD',statement:'06  /  FRAMED STATEMENT'};
+const subtitleSizes={essay:35,trail:35,book:35,quote:35,split:35,statement:35,summit:35,expedition:35};
+const titleSizes={essay:87,trail:72,book:74,quote:82,split:72,statement:78,summit:88,expedition:96};
+const metaSizes={essay:22,trail:22,book:22,quote:22,split:22,statement:22,summit:22,expedition:22};
+const compositionMarkers={essay:'01  /  PHOTO ESSAY',trail:'02  /  TRAIL LOG',book:'03  /  BOOK NOTES',quote:'04  /  QUIET QUOTE',split:'05  /  FIELD SPREAD',statement:'06  /  FRAMED STATEMENT',expedition:'08  /  EXPEDITION INDEX'};
 const headlineFonts={
   barlow:"'Barlow Condensed',Impact,sans-serif",
   oswald:"'Oswald','Arial Narrow',sans-serif"
