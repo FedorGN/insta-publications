@@ -174,12 +174,13 @@ button { cursor: pointer; }
 .template-quote .meta-right { display: none; }
 .template-split .photo-treatment { background: linear-gradient(90deg, rgba(11,30,18,.1), transparent 50%, rgba(9,30,18,.28)); }
 .template-split .layout-block { top: 72px; right: 72px; bottom: 72px; left: auto; width: 510px; justify-content: center; padding: 58px 49px 46px; color: var(--ink); background: rgba(91,223,86,.96); box-shadow: 12px 12px 0 var(--orange); }
+.template-split .title-wrap::before { background: var(--orange); box-shadow: 16px 0 0 var(--yellow); }
 .template-split .hero-title { color: var(--ink); font-size: 74px; line-height: 1.06; }
 .template-split .subtitle { margin: 28px 0 40px; color: #24432e; font-size: 24px; }
 .template-split .meta-row { padding-top: 17px; border-color: var(--forest); color: var(--forest); font-size: 16px; }
 .template-split .meta-left { color: var(--forest); }
 .template-split .meta-right { display: none; }
-.template-split .composition-marker { color: var(--deep); background: var(--orange); }
+.template-split .composition-marker { color: var(--deep); background: var(--pink); }
 .template-statement .photo-treatment { background: rgba(9, 34, 20, .5); }
 .template-statement .layout-block { top: 82px; right: 82px; bottom: 82px; left: 82px; justify-content: center; align-items: center; padding: 65px 76px 86px; border: 3px solid var(--pink); background: rgba(12, 35, 22, .2); text-align: center; }
 .template-statement .layout-block::before { position: absolute; inset: 16px -16px -16px 16px; border: 3px solid var(--orange); content: ''; pointer-events: none; }
