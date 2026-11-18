@@ -59,6 +59,7 @@ button { cursor: pointer; }
 .template-button.active .template-index { color: var(--deep); }
 .template-chevron { margin-left: auto; color: var(--orange); font-size: 15px; }
 .field { display: flex; flex-direction: column; gap: 7px; margin-bottom: 11px; }
+.field[hidden], .composition-marker[hidden], .summit-marker[hidden] { display: none !important; }
 .field label { color: #d1ded0; font-size: 11px; font-weight: 700; }
 .field input, .field textarea, .typeface-control select {
   width: 100%; padding: 10px 11px; border: 1px solid #45614b; border-radius: 5px; outline: 0;
@@ -139,11 +140,13 @@ button { cursor: pointer; }
 .topline { position: absolute; top: 70px; right: 80px; left: 80px; display: flex; justify-content: space-between; color: #fff; font-size: 15px; }
 .topline-end { font-size: 12px; }
 .vertical-note { display: none; }
+.composition-marker { position: absolute; z-index: 1; top: -54px; left: 0; padding: 11px 18px; color: var(--deep); background: var(--acid); font: 600 16px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
 
 /* Field route: energetic, high-visibility color blocks with the photo always full bleed. */
 .template-essay .title-wrap::before { background: var(--orange); box-shadow: 16px 0 0 var(--acid); }
 .template-essay .hero-title { max-width: 860px; }
 .template-essay .meta-row { border-color: var(--orange); }
+.template-essay .composition-marker { background: var(--orange); }
 .template-trail .photo-treatment { background: linear-gradient(180deg, rgba(8,27,17,.08) 8%, rgba(8,27,17,.22) 46%, rgba(8,27,17,.85)); }
 .template-trail .layout-block { right: 170px; bottom: 84px; left: 76px; padding: 44px 48px 38px; color: var(--ink); background: rgba(91,223,86,.96); box-shadow: 14px 14px 0 var(--orange); }
 .template-trail .title-wrap::before { background: var(--orange); box-shadow: 16px 0 0 var(--forest); }
@@ -151,6 +154,7 @@ button { cursor: pointer; }
 .template-trail .subtitle { margin: 24px 0 34px; color: #23432d; font-size: 25px; }
 .template-trail .meta-row { border-color: var(--forest); color: var(--forest); font-size: 17px; }
 .template-trail .meta-left { color: var(--forest); }
+.template-trail .composition-marker { color: var(--deep); background: var(--acid); }
 .template-trail .vertical-note { position: absolute; right: 68px; bottom: 170px; display: block; writing-mode: vertical-rl; color: var(--acid); font-size: 14px; }
 .template-book .photo-treatment { background: linear-gradient(90deg, rgba(8,22,14,.62), rgba(8,22,14,.08)), linear-gradient(180deg, rgba(8,22,14,.25), transparent 38%, rgba(8,22,14,.5)); }
 .template-book .layout-block { right: 75px; bottom: 80px; left: 75px; padding: 48px 52px 42px; border-left: 9px solid var(--orange); color: #fff; background: rgba(16,49,34,.93); }
@@ -158,8 +162,10 @@ button { cursor: pointer; }
 .template-book .subtitle { margin: 28px 0 34px; font-size: 26px; }
 .template-book .meta-row { font-size: 17px; }
 .template-book .meta-left { color: var(--orange); }
+.template-book .composition-marker { color: var(--deep); background: var(--yellow); }
 .template-quote .photo-treatment { background: rgba(8, 30, 18, .56); }
 .template-quote .layout-block { top: 255px; right: 100px; bottom: 120px; left: 100px; justify-content: center; align-items: center; text-align: center; }
+.template-quote .composition-marker { left: 50%; color: var(--deep); background: var(--pink); transform: translateX(-50%); }
 .template-quote .title-wrap { max-width: 850px; }
 .template-quote .title-wrap::before { margin: 0 auto 32px; background: var(--orange); box-shadow: 16px 0 0 var(--acid); }
 .template-quote .hero-title { color: #fff; font-size: 90px; line-height: 1.12; }
@@ -173,15 +179,26 @@ button { cursor: pointer; }
 .template-split .meta-row { padding-top: 17px; border-color: var(--forest); color: var(--forest); font-size: 16px; }
 .template-split .meta-left { color: var(--forest); }
 .template-split .meta-right { display: none; }
+.template-split .composition-marker { color: var(--deep); background: var(--orange); }
 .template-statement .photo-treatment { background: rgba(9, 34, 20, .5); }
 .template-statement .layout-block { top: 82px; right: 82px; bottom: 82px; left: 82px; justify-content: center; align-items: center; padding: 65px 76px 86px; border: 3px solid var(--pink); background: rgba(12, 35, 22, .2); text-align: center; }
 .template-statement .layout-block::before { position: absolute; inset: 16px -16px -16px 16px; border: 3px solid var(--orange); content: ''; pointer-events: none; }
+.template-statement .composition-marker { left: 50%; color: var(--deep); background: var(--pink); transform: translateX(-50%); }
 .template-statement .title-wrap { max-width: 790px; }
 .template-statement .title-wrap::before { margin: 0 auto 30px; background: var(--pink); box-shadow: 16px 0 0 var(--orange); }
 .template-statement .hero-title { font-size: 84px; }
 .template-statement .subtitle { max-width: 630px; margin: 30px auto 58px; font-size: 25px; }
 .template-statement .meta-row { position: absolute; right: 70px; bottom: 38px; left: 70px; width: auto; justify-content: center; padding-top: 16px; border-color: var(--orange); font-size: 17px; }
 .template-statement .meta-right { display: none; }
+.template-summit .photo-treatment { background: linear-gradient(180deg, rgba(7,24,15,.08) 8%, rgba(7,24,15,.12) 38%, rgba(7,24,15,.78) 100%); }
+.template-summit .layout-block { right: 76px; bottom: 92px; left: 76px; padding: 48px 52px 42px; border-left: 12px solid var(--orange); color: var(--ink); background: rgba(238,231,78,.97); }
+.template-summit .summit-marker { position: absolute; top: -54px; left: -12px; padding: 11px 18px; color: var(--deep); background: var(--acid); font: 600 16px var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+.template-summit .title-wrap::before { background: var(--orange); box-shadow: 16px 0 0 var(--pink); }
+.template-summit .hero-title { color: var(--deep); font-size: 88px; line-height: 1; }
+.template-summit .subtitle { margin: 24px 0 34px; color: #28412c; font-size: 35px; }
+.template-summit .meta-row { border-color: var(--deep); color: var(--deep); font-size: 22px; }
+.template-summit .meta-left { color: #28412c; }
+.template-summit .meta-right { color: var(--deep); }
 
 .artboard.text-shadow-enabled .hero-title, .artboard.text-shadow-enabled .subtitle, .artboard.text-shadow-enabled .meta-row { text-shadow: 0 2px 12px rgba(0,0,0,.55), 0 1px 3px rgba(0,0,0,.75); }
 .artboard.gradient-disabled .photo-treatment { background: transparent !important; }

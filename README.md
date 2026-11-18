@@ -1,6 +1,6 @@
 # FIELDNOTES — Instagram Editorial Studio
 
-A photo-first design system for photography, travel and books. Five editable CSS templates, built as a single standalone HTML/CSS/JavaScript editor, with 1080×1350 artboards.
+A photo-first design system for photography, travel and books. Seven editable CSS templates, built as a single standalone HTML/CSS/JavaScript editor, with 1080×1350 artboards.
 
 ## Quick start
 
@@ -25,7 +25,9 @@ Output: `output/fieldnotes-<template>.png` at 1080 × 1350. Playwright is used f
 - `trail` Trail Log — light field-guide card over image
 - `book` Book Notes — warm reading-review panel over image
 - `quote` Quiet Quote — centered typographic statement
+- `split` Field Spread — split editorial cover with photo and color panel
 - `statement` Framed Statement — centered quote with an offset editorial frame
+- `summit` Summit Marker — high-visibility summit route card
 
 ## Visual foundations
 
