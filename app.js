@@ -17,7 +17,9 @@ const samples={
 const $=s=>document.querySelector(s);
 const fields=['title','subtitle','meta','number'];
 let current='essay'; let bgOverrides={};
-const subtitleSizes={essay:29,trail:25,book:26,quote:25,split:24,statement:25};
+const subtitleSizes={essay:35,trail:35,book:35,quote:35,split:35,statement:35};
+const titleSizes={essay:87,trail:72,book:74,quote:82,split:72,statement:78};
+const metaSizes={essay:19,trail:17,book:17,quote:17,split:16,statement:17};
 const headlineFonts={
   barlow:"'Barlow Condensed',Impact,sans-serif",
   oswald:"'Oswald','Arial Narrow',sans-serif"
@@ -28,6 +30,8 @@ function setHeadlineFont(){ document.documentElement.style.setProperty('--font-h
 $('#fontInput').addEventListener('change',setHeadlineFont);
 function updatePreview(){
  $('#titlePreview').textContent=$('#titleInput').value;
+ const titleSize=Number($('#titleSizeInput').value);
+ if(Number.isFinite(titleSize)&&titleSize>=24&&titleSize<=180) $('#titlePreview').style.fontSize=titleSize+'px';
  const subtitle=$('#subtitlePreview');
  subtitle.textContent=$('#subtitleInput').value;
  const subtitleSize=Number($('#subtitleSizeInput').value);
@@ -35,6 +39,8 @@ function updatePreview(){
  $('#metaPreview').textContent=$('#metaInput').value;
  $('#editionPreview').textContent=$('#numberInput').value;
  const metaRow=$('#metaRow');
+ const metaSize=Number($('#metaSizeInput').value);
+ if(Number.isFinite(metaSize)&&metaSize>=10&&metaSize<=48) metaRow.style.fontSize=metaSize+'px';
  metaRow.hidden=!$('#metaLineToggle').checked;
  metaRow.style.display=metaRow.hidden?'none':'';
  let url=bgOverrides[current]||photos[current];
@@ -44,16 +50,16 @@ function updatePreview(){
  $('#photoBg').style.backgroundImage=gradientEnabled
    ? `linear-gradient(160deg,rgba(36,57,47,.08),rgba(8,18,13,.08)),url(${JSON.stringify(url)})`
    : `url(${JSON.stringify(url)})`;
- const title=$('#titlePreview'); const n=$('#titleInput').value.length;
- title.style.fontSize=(current==='statement'?Math.max(58,78-Math.max(0,n-36)*.38):current==='quote'?Math.max(57,82-Math.max(0,n-54)*.47):current==='split'?Math.max(55,72-Math.max(0,n-44)*.32):current==='trail'?Math.max(51,72-Math.max(0,n-51)*.38):current==='book'?Math.max(52,74-Math.max(0,n-50)*.38):Math.max(54,87-Math.max(0,n-49)*.48))+'px';
  const textShadowToggle=$('#textShadowToggle');
  const textShadowEnabled=textShadowToggle ? textShadowToggle.checked : false;
  $('#artboard').classList.toggle('text-shadow-enabled',textShadowEnabled);
 }
-function setTemplate(name){current=name;artboard.className='artboard template-'+name;document.querySelectorAll('[data-template]').forEach(b=>b.classList.toggle('active',b.dataset.template===name));const s=samples[name];fields.forEach(f=>$('#'+f+'Input').value=s[f]);$('#subtitleSizeInput').value=subtitleSizes[name];$('#photoUrlInput').value='';updatePreview();}
+function setTemplate(name){current=name;artboard.className='artboard template-'+name;document.querySelectorAll('[data-template]').forEach(b=>b.classList.toggle('active',b.dataset.template===name));const s=samples[name];fields.forEach(f=>$('#'+f+'Input').value=s[f]);$('#titleSizeInput').value=titleSizes[name];$('#subtitleSizeInput').value=subtitleSizes[name];$('#metaSizeInput').value=metaSizes[name];$('#photoUrlInput').value='';updatePreview();}
 document.querySelectorAll('[data-template]').forEach(b=>b.addEventListener('click',()=>setTemplate(b.dataset.template)));
 fields.forEach(f=>$('#'+f+'Input').addEventListener('input',updatePreview));
 $('#subtitleSizeInput').addEventListener('input',updatePreview);
+$('#titleSizeInput').addEventListener('input',updatePreview);
+$('#metaSizeInput').addEventListener('input',updatePreview);
 $('#metaLineToggle').addEventListener('change',updatePreview);
 $('#textShadowToggle').addEventListener('change',updatePreview);
 $('#backgroundGradientToggle').addEventListener('change',updatePreview);
