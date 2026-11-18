@@ -40,6 +40,7 @@
       <header class="workspace-header"><div><span class="kicker">THE OUTDOOR STORY CANVAS</span><h1>Stories worth keeping<span>.</span></h1><p>Big days outside. Good stories to bring back.</p></div><div class="workspace-actions"><button id="resetBtn" class="button secondary">Reset sample</button><button id="exportBtn" class="button primary">Export PNG ↗</button></div></header>
       <div class="stage"><div class="artboard-scale"><article id="artboard" class="artboard template-essay" aria-label="Instagram publication preview">
         <div class="photo-bg" id="photoBg"></div><div class="photo-treatment"></div><div class="grain"></div>
+        <div class="top-composition-marker" id="topCompositionMarker" hidden></div>
         <!-- <div class="topline"><div class="mini-brand">FIELDNOTES</div><div class="topline-end" id="topRight">AN EDITORIAL JOURNAL &nbsp; / &nbsp; 001</div></div> -->
         <div class="layout-block"><div class="composition-marker" id="compositionMarkerPreview" hidden></div><div class="summit-marker" id="summitMarkerPreview" hidden></div><div class="expedition-content"><div class="title-wrap"><h2 class="hero-title" id="titlePreview">Somewhere,<br>far from noise.</h2></div><div class="subtitle" id="subtitlePreview">On learning to be still in places that make you feel small.</div><div class="meta-row" id="metaRow"><span class="meta-left" id="metaPreview">FRENCH ALPS · 45°55′N</span><span class="meta-right" id="editionPreview">VOL. 01 — 2026</span></div></div></div>
       </article></div></div>
@@ -49,12 +50,13 @@
       <div class="section-label">04 / TYPOGRAPHY</div>
       <div class="field typeface-control"><label for="fontInput">Headline font</label><select id="fontInput"><option value="barlow" selected>Barlow Condensed · ExtraBold (recommended)</option><option value="oswald">Oswald · Bold</option></select></div>
       <div class="field"><label for="titleSizeInput">Title size (px)</label><input id="titleSizeInput" type="number" min="24" max="180" step="1" value="87" /></div>
-      <div class="field" id="compositionMarkerSizeField" hidden><label for="compositionMarkerSizeInput">Composition marker text size (px)</label><input id="compositionMarkerSizeInput" type="number" min="8" max="32" step="1" value="16" /></div>
+      <div class="field" id="compositionMarkerSizeField" hidden><label for="compositionMarkerSizeInput">Composition marker text size (px)</label><input id="compositionMarkerSizeInput" type="number" min="8" max="32" step="1" value="20" /></div>
       <div class="field"><label for="subtitleSizeInput">Supporting text size (px)</label><input id="subtitleSizeInput" type="number" min="12" max="64" step="1" value="35" /></div>
       <div class="field"><label for="metaSizeInput">Location + edition size (px)</label><input id="metaSizeInput" type="number" min="10" max="48" step="1" value="22" /></div>
       <div class="section-label spacing-top">05 / DISPLAY</div>
       <div class="field checkbox-field"><label for="metaLineToggle"><input type="checkbox" id="metaLineToggle" checked /> Display metadata line</label></div>
       <div class="field checkbox-field"><label for="textShadowToggle"><input type="checkbox" id="textShadowToggle" /> Add shadow behind text</label></div>
+      <div class="field checkbox-field"><label for="titleAccentToggle"><input type="checkbox" id="titleAccentToggle" checked /> Display bar above title</label></div>
       <div class="field checkbox-field"><label for="backgroundGradientToggle"><input type="checkbox" id="backgroundGradientToggle" checked /> Display background gradient</label></div>
     </aside>
   </div>

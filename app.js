@@ -58,12 +58,17 @@ function fitExpeditionLayout(){
 function updatePreview(){
  const compositionMarker=$('#compositionMarkerInput').value.trim();
  $('#compositionMarkerPreview').textContent=compositionMarker;
- $('#compositionMarkerPreview').hidden=!compositionMarkers[current]||!compositionMarker;
+ const markerAtTop=['essay','trail','book'].includes(current);
+ const topMarker=$('#topCompositionMarker');
+ topMarker.textContent=compositionMarker;
+ topMarker.hidden=!markerAtTop||!compositionMarker;
+ $('#compositionMarkerPreview').hidden=!compositionMarkers[current]||!compositionMarker||markerAtTop;
  $('#compositionMarkerField').hidden=!compositionMarkers[current];
  $('#compositionMarkerSizeField').hidden=false;
  const compositionMarkerSize=Number($('#compositionMarkerSizeInput').value);
  if(Number.isFinite(compositionMarkerSize)&&compositionMarkerSize>=8&&compositionMarkerSize<=32){
    $('#compositionMarkerPreview').style.fontSize=compositionMarkerSize+'px';
+   topMarker.style.fontSize=compositionMarkerSize+'px';
    $('#summitMarkerPreview').style.fontSize=compositionMarkerSize+'px';
  }
  const summitLabel=$('#summitLabelInput').value.trim();
@@ -94,6 +99,7 @@ function updatePreview(){
  const textShadowToggle=$('#textShadowToggle');
  const textShadowEnabled=textShadowToggle ? textShadowToggle.checked : false;
  $('#artboard').classList.toggle('text-shadow-enabled',textShadowEnabled);
+ $('#artboard').classList.toggle('title-accent-hidden',!$('#titleAccentToggle').checked);
  fitExpeditionLayout();
 }
 function setTemplate(name){current=name;artboard.className='artboard template-'+name;document.querySelectorAll('[data-template]').forEach(b=>b.classList.toggle('active',b.dataset.template===name));const s=samples[name];fields.forEach(f=>$('#'+f+'Input').value=s[f]);$('#compositionMarkerInput').value=compositionMarkers[name]||'';$('#summitLabelInput').value=s.summitLabel||'';$('#titleSizeInput').value=titleSizes[name];$('#subtitleSizeInput').value=subtitleSizes[name];$('#metaSizeInput').value=metaSizes[name];$('#photoUrlInput').value='';updatePreview();}
@@ -107,6 +113,7 @@ $('#titleSizeInput').addEventListener('input',updatePreview);
 $('#metaSizeInput').addEventListener('input',updatePreview);
 $('#metaLineToggle').addEventListener('change',updatePreview);
 $('#textShadowToggle').addEventListener('change',updatePreview);
+$('#titleAccentToggle').addEventListener('change',updatePreview);
 $('#backgroundGradientToggle').addEventListener('change',updatePreview);
 $('#photoInput').addEventListener('change',e=>{const file=e.target.files[0];if(!file)return;bgOverrides[current]=URL.createObjectURL(file);updatePreview();});
 $('#photoUrlInput').addEventListener('change',e=>{if(e.target.value.trim()){bgOverrides[current]=e.target.value.trim();updatePreview();}});

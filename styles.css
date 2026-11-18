@@ -59,7 +59,7 @@ button { cursor: pointer; }
 .template-button.active .template-index { color: var(--deep); }
 .template-chevron { margin-left: auto; color: var(--orange); font-size: 15px; }
 .field { display: flex; flex-direction: column; gap: 7px; margin-bottom: 11px; }
-.field[hidden], .composition-marker[hidden], .summit-marker[hidden] { display: none !important; }
+.field[hidden], .composition-marker[hidden], .summit-marker[hidden], .top-composition-marker[hidden] { display: none !important; }
 .field label { color: #d1ded0; font-size: 11px; font-weight: 700; }
 .field input, .field textarea, .typeface-control select {
   width: 100%; padding: 10px 11px; border: 1px solid #45614b; border-radius: 5px; outline: 0;
@@ -141,6 +141,7 @@ button { cursor: pointer; }
 .topline-end { font-size: 12px; }
 .vertical-note { display: none; }
 .composition-marker { position: relative; z-index: 1; top: auto; left: auto; display: inline-flex; width: max-content; align-self: flex-start; align-items: center; margin: 0 0 24px; padding: 11px 18px; color: var(--deep); background: var(--acid); font: 600 16px/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.top-composition-marker { position: absolute; z-index: 2; top: 76px; left: 76px; display: inline-flex; max-width: calc(100% - 152px); align-items: center; padding: 11px 18px; color: var(--deep); background: var(--acid); font: 600 16px/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
 .expedition-content { display: contents; }
 
 /* Field route: energetic, high-visibility color blocks with the photo always full bleed. */
@@ -148,6 +149,7 @@ button { cursor: pointer; }
 .template-essay .hero-title { max-width: 860px; }
 .template-essay .meta-row { border-color: var(--orange); }
 .template-essay .composition-marker { background: var(--orange); }
+.template-essay .top-composition-marker { background: var(--orange); }
 .template-trail .photo-treatment { background: linear-gradient(180deg, rgba(8,27,17,.08) 8%, rgba(8,27,17,.22) 46%, rgba(8,27,17,.85)); }
 .template-trail .layout-block { right: 170px; bottom: 84px; left: 76px; padding: 44px 48px 38px; color: var(--ink); background: rgba(91,223,86,.96); box-shadow: 14px 14px 0 var(--orange); }
 .template-trail .title-wrap::before { background: var(--orange); box-shadow: 16px 0 0 var(--forest); }
@@ -156,6 +158,7 @@ button { cursor: pointer; }
 .template-trail .meta-row { border-color: var(--forest); color: var(--forest); font-size: 17px; }
 .template-trail .meta-left { color: var(--forest); }
 .template-trail .composition-marker { color: var(--deep); background: var(--pink); }
+.template-trail .top-composition-marker { color: var(--deep); background: var(--pink); }
 .template-trail .vertical-note { position: absolute; right: 68px; bottom: 170px; display: block; writing-mode: vertical-rl; color: var(--acid); font-size: 14px; }
 .template-book .photo-treatment { background: linear-gradient(90deg, rgba(8,22,14,.62), rgba(8,22,14,.08)), linear-gradient(180deg, rgba(8,22,14,.25), transparent 38%, rgba(8,22,14,.5)); }
 .template-book .layout-block { right: 75px; bottom: 80px; left: 75px; padding: 48px 52px 42px; border-left: 9px solid var(--orange); color: #fff; background: rgba(16,49,34,.93); }
@@ -164,6 +167,7 @@ button { cursor: pointer; }
 .template-book .meta-row { font-size: 17px; }
 .template-book .meta-left { color: var(--orange); }
 .template-book .composition-marker { color: var(--deep); background: var(--yellow); }
+.template-book .top-composition-marker { color: var(--deep); background: var(--yellow); }
 .template-quote .photo-treatment { background: rgba(8, 30, 18, .56); }
 .template-quote .layout-block { top: 255px; right: 100px; bottom: 120px; left: 100px; justify-content: center; align-items: center; text-align: center; }
 .template-quote .composition-marker { align-self: center; color: var(--deep); background: var(--pink); }
@@ -215,6 +219,7 @@ button { cursor: pointer; }
 .template-expedition .meta-right { color: var(--deep); }
 
 .artboard.text-shadow-enabled .hero-title, .artboard.text-shadow-enabled .subtitle, .artboard.text-shadow-enabled .meta-row { text-shadow: 0 2px 12px rgba(0,0,0,.55), 0 1px 3px rgba(0,0,0,.75); }
+.artboard.title-accent-hidden .title-wrap::before { display: none; }
 .artboard.gradient-disabled .photo-treatment { background: transparent !important; }
 .artboard.reference-type .layout-block { top: 49%; bottom: 70px; justify-content: flex-start; align-items: center; text-align: center; }
 .artboard.reference-type .title-wrap { max-width: 870px; }
