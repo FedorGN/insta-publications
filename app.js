@@ -17,18 +17,21 @@ const samples={
 const $=s=>document.querySelector(s);
 const fields=['title','subtitle','meta','number'];
 let current='essay'; let bgOverrides={};
+const subtitleSizes={essay:29,trail:25,book:26,quote:25,split:24,statement:25};
 const headlineFonts={
-  baskerville:"'Libre Baskerville',Georgia,serif",
-  georgia:"Georgia,'Times New Roman',serif",
-  newsreader:"'Newsreader',Georgia,serif"
+  barlow:"'Barlow Condensed',Impact,sans-serif",
+  oswald:"'Oswald','Arial Narrow',sans-serif"
 };
 
 const artboard=$('#artboard');
-function setHeadlineFont(){ document.documentElement.style.setProperty('--font-serif',headlineFonts[$('#fontInput').value]||headlineFonts.baskerville); updatePreview(); }
+function setHeadlineFont(){ document.documentElement.style.setProperty('--font-headline',headlineFonts[$('#fontInput').value]||headlineFonts.barlow); updatePreview(); }
 $('#fontInput').addEventListener('change',setHeadlineFont);
 function updatePreview(){
  $('#titlePreview').textContent=$('#titleInput').value;
- $('#subtitlePreview').textContent=$('#subtitleInput').value;
+ const subtitle=$('#subtitlePreview');
+ subtitle.textContent=$('#subtitleInput').value;
+ const subtitleSize=Number($('#subtitleSizeInput').value);
+ if(Number.isFinite(subtitleSize)&&subtitleSize>=12&&subtitleSize<=64) subtitle.style.fontSize=subtitleSize+'px';
  $('#metaPreview').textContent=$('#metaInput').value;
  $('#editionPreview').textContent=$('#numberInput').value;
  const metaRow=$('#metaRow');
@@ -47,9 +50,10 @@ function updatePreview(){
  const textShadowEnabled=textShadowToggle ? textShadowToggle.checked : false;
  $('#artboard').classList.toggle('text-shadow-enabled',textShadowEnabled);
 }
-function setTemplate(name){current=name;artboard.className='artboard template-'+name;document.querySelectorAll('[data-template]').forEach(b=>b.classList.toggle('active',b.dataset.template===name));const s=samples[name];fields.forEach(f=>$('#'+f+'Input').value=s[f]);$('#photoUrlInput').value='';updatePreview();}
+function setTemplate(name){current=name;artboard.className='artboard template-'+name;document.querySelectorAll('[data-template]').forEach(b=>b.classList.toggle('active',b.dataset.template===name));const s=samples[name];fields.forEach(f=>$('#'+f+'Input').value=s[f]);$('#subtitleSizeInput').value=subtitleSizes[name];$('#photoUrlInput').value='';updatePreview();}
 document.querySelectorAll('[data-template]').forEach(b=>b.addEventListener('click',()=>setTemplate(b.dataset.template)));
 fields.forEach(f=>$('#'+f+'Input').addEventListener('input',updatePreview));
+$('#subtitleSizeInput').addEventListener('input',updatePreview);
 $('#metaLineToggle').addEventListener('change',updatePreview);
 $('#textShadowToggle').addEventListener('change',updatePreview);
 $('#backgroundGradientToggle').addEventListener('change',updatePreview);

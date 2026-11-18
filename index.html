@@ -6,7 +6,7 @@
   <title>FIELDNOTES — Editorial Studio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700&family=IBM+Plex+Mono:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -23,11 +23,12 @@
         <button class="template-button" data-template="statement"><span class="template-index">06</span><span>Framed Statement</span><span class="template-chevron">↗</span></button>
       </div>
       <div class="section-label spacing-top">02 / TYPOGRAPHY</div>
-      <div class="field typeface-control"><label for="fontInput">Editorial headline font</label><select id="fontInput"><option value="baskerville" selected>Libre Baskerville · Bold (recommended)</option><option value="georgia">Georgia · Bold (classic)</option><option value="newsreader">Newsreader · Bold (softer)</option></select></div>
-      <p class="typeface-hint">Bold, traditional magazine serifs like the supplied Field Mag reference. All other post styles remain intact.</p>
+      <div class="field typeface-control"><label for="fontInput">Adventure headline font</label><select id="fontInput"><option value="barlow" selected>Barlow Condensed · ExtraBold (recommended)</option><option value="oswald">Oswald · Bold</option></select></div>
+      <p class="typeface-hint">Bold, condensed trail lettering. Your photos and words stay editable.</p>
       <div class="section-label spacing-top">03 / CONTENT</div>
       <div class="field"><label for="titleInput">Title / quote</label><textarea id="titleInput" rows="3"></textarea></div>
       <div class="field"><label for="subtitleInput">Supporting text</label><textarea id="subtitleInput" rows="3"></textarea></div>
+      <div class="field"><label for="subtitleSizeInput">Supporting text size (px)</label><input id="subtitleSizeInput" type="number" min="12" max="64" step="1" value="29" /></div>
       <div class="field"><label for="metaInput">Location / author</label><textarea id="metaInput" rows="2"></textarea></div>
       <div class="field checkbox-field"><label for="metaLineToggle"><input type="checkbox" id="metaLineToggle" checked /> Display metadata line</label></div>
       <div class="field checkbox-field"><label for="textShadowToggle"><input type="checkbox" id="textShadowToggle" /> Add shadow behind text</label></div>
@@ -39,7 +40,7 @@
       <div class="side-footer"><span>PHOTO FIRST. STORY ALWAYS.</span><span>1080 × 1350 / 4:5</span></div>
     </aside>
     <main class="workspace">
-      <header class="workspace-header"><div><span class="kicker">THE EDITORIAL CANVAS</span><h1>Stories worth keeping<span>.</span></h1><p>One photograph. A few considered words. A lasting impression.</p></div><div class="workspace-actions"><button id="resetBtn" class="button secondary">Reset sample</button><button id="exportBtn" class="button primary">Export PNG ↗</button></div></header>
+      <header class="workspace-header"><div><span class="kicker">THE OUTDOOR STORY CANVAS</span><h1>Stories worth keeping<span>.</span></h1><p>Big days outside. Good stories to bring back.</p></div><div class="workspace-actions"><button id="resetBtn" class="button secondary">Reset sample</button><button id="exportBtn" class="button primary">Export PNG ↗</button></div></header>
       <div class="stage"><div class="artboard-scale"><article id="artboard" class="artboard template-essay" aria-label="Instagram publication preview">
         <div class="photo-bg" id="photoBg"></div><div class="photo-treatment"></div><div class="grain"></div>
         <!-- <div class="topline"><div class="mini-brand">FIELDNOTES</div><div class="topline-end" id="topRight">AN EDITORIAL JOURNAL &nbsp; / &nbsp; 001</div></div> -->
